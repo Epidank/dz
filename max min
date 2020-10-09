@@ -1,0 +1,39 @@
+package com.company;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int number[] = new int[6];
+        number[0] = 6;
+        number[1] = 9;
+        number[2] = 7;
+        number[3] = 10;
+        number[4] = 4;
+        number[5] = 5;
+        int max1 = 0;
+        int max2 = 0;
+        int min1 = 10000;
+        int min2 = 100000000;
+        for (int i = 0; i < number.length; i++) {
+            if (number[i] > max1) {
+                max2 = max1;
+                max1 = number[i];
+            }
+            if (number[i] < max1 && number[i] > max2) {
+                max2 = number[i];
+            }
+        }
+        System.out.println(max1 * max2);
+        for (int i = 0; i < number.length; i++) {
+            if (min1 > number[i]) {
+                min2 = min1;
+                min1 = number[i];
+            }
+            if (number[i] > min1 && number[i] < min2) {
+                min2 = number[i];
+            }
+        }
+        System.out.println(min1 * min2);
+    }
